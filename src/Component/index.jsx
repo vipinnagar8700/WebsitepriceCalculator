@@ -136,7 +136,7 @@ const Home = () => {
             <Container maxWidth="sm"  >
                 {/* Modal */}
                 {isModalOpen && (
-                    <Box sx={{ position: 'absolute', top: '50%', left: '50%',  transform: 'translate(-50%, -50%)',backgroundColor: '#FA9723', borderRadius: 2, zIndex: 999, padding: 1 }} onClose={handleCloseModal}>
+                    <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: '#FA9723', borderRadius: 2, zIndex: 999, padding: 1 }} onClose={handleCloseModal}>
                         {/* Content for your modal */}
                         <Stack sx={{ justifyContent: 'end', alignContent: 'end', alignItems: 'end' }}>
 
@@ -145,7 +145,7 @@ const Home = () => {
                                 {
                                     typelist && typelist.map((data, index) => {
                                         return (
-                                            <ListItem key={index} sx={{textWrap:"nowrap"}}
+                                            <ListItem key={index} sx={{ textWrap: "nowrap" }}
 
                                             >
                                                 <Checkbox
