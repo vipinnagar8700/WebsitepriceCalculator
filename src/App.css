@@ -1,0 +1,38 @@
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #A01586; /* Primary color for track */
+    height: 6px; /* Adjust the height of the slider track */
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /* Width of the thumb */
+    height: 20px; /* Height of the thumb */
+    background-color: #A01586; /* Primary color for thumb */
+    border-radius: 50%; /* Make thumb circular */
+    cursor: pointer;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #A01586;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #A01586;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent; /* Hide the default background */
+  }
+  
