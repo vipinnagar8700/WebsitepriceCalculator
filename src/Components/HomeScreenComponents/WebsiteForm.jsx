@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Select from 'react-select'; // Import the react-select component
 
 const WebsiteForm = ({ onSubmit, selectedServiceName }) => {
   // State to manage form inputs
@@ -9,6 +10,7 @@ const WebsiteForm = ({ onSubmit, selectedServiceName }) => {
     productCount: 0, // Default value set to 1
     platform: '', // Added to track the selected platform
     pageCount: '', // Added to track the selected number of pages
+    selectedServices: [] // Added for multi-select dropdown
   });
 
   const hostingOptions = [
@@ -26,6 +28,7 @@ const WebsiteForm = ({ onSubmit, selectedServiceName }) => {
   const domainOptions = [
     { value: '.com', label: '.com', price: 3000 },
     { value: '.in', label: '.in', price: 2000 },
+    { value: 'Other', label: 'Other', price: 0 },
     { value: 'No Need', label: 'No Need', price: 0 },
   ];
 
@@ -52,6 +55,15 @@ const WebsiteForm = ({ onSubmit, selectedServiceName }) => {
     { value: 'more', label: 'More than 20 Pages' ,price:'100000'},
   ];
 
+  // Multiple selection service options
+  const serviceOptions = [
+    { value: 'seo', label: 'SEO Optimization' },
+    { value: 'marketing', label: 'Digital Marketing' },
+    { value: 'design', label: 'UI/UX Design' },
+    { value: 'development', label: 'Custom Development' },
+    { value: 'content', label: 'Content Writing' }
+  ];
+
   // Effect to auto-submit form after 300ms
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -74,6 +86,13 @@ const WebsiteForm = ({ onSubmit, selectedServiceName }) => {
     setFormData((prev) => ({
       ...prev,
       productCount: newCount,
+    }));
+  };
+
+  const handleMultiSelectChange = (selectedOptions) => {
+    setFormData((prev) => ({
+      ...prev,
+      selectedServices: selectedOptions,
     }));
   };
 
@@ -128,6 +147,7 @@ const WebsiteForm = ({ onSubmit, selectedServiceName }) => {
       ))}
     </select>
   </div>
+
 
   {/* Domain Extension Radio Buttons */}
   <div className="mb-4 flex flex-col sm:flex-row sm:justify-between text-center">
@@ -208,6 +228,25 @@ const WebsiteForm = ({ onSubmit, selectedServiceName }) => {
       </select>
     </div>
   )}
+
+  {/* Multi-Select Services Dropdown */}
+
+  <div className="mb-4 flex flex-col sm:flex-row sm:justify-between text-center">
+    <label className="block mb-1 font-medium text-gray-900 font-montserrat">
+      Additional Services:
+    </label>
+    <div className="w-full sm:w-1/3 mt-2 sm:mt-0">
+      <Select
+        isMulti
+        name="selectedServices"
+        options={serviceOptions}
+        value={formData.selectedServices}
+        onChange={handleMultiSelectChange}
+        className="basic-multi-select"
+        classNamePrefix="select Services"
+      />
+    </div>
+  </div>
 
   {/* Disclaimer */}
   <div className="mt-6">

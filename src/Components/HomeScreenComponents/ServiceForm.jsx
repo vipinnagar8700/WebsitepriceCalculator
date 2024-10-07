@@ -9,18 +9,18 @@ import GraphicsForm from './GraphicsForm';
 
 function ServicesForm() {
   const { p_id, activeTab } = useParams();
-const [WebsiteData,setWebsiteData] = useState([])
+  const [WebsiteData, setWebsiteData] = useState([])
   let formToRender;
-    // State to hold the form data
-    const handleFormSubmit = (data) => {
-      console.log('Received form data from WebsiteForm:', data);
-      setWebsiteData(data)
-      // You can perform additional actions here like saving the data or updating state
-    };
+  // State to hold the form data
+  const handleFormSubmit = (data) => {
+    console.log('Received form data from WebsiteForm:', data);
+    setWebsiteData(data)
+    // You can perform additional actions here like saving the data or updating state
+  };
   // Determine which form to display based on activeTab
   switch (decodeURIComponent(activeTab)) {
     case 'website':
-      formToRender = <WebsiteForm  onSubmit={handleFormSubmit}/>;
+      formToRender = <WebsiteForm onSubmit={handleFormSubmit} />;
       break;
     case 'application':
       formToRender = <ApplicationForm />;
@@ -28,12 +28,12 @@ const [WebsiteData,setWebsiteData] = useState([])
     case 'digital':
       formToRender = <DigitalMarketingForm />;
       break;
-      case 'software':
-        formToRender = <ServicesFormList />;
-        break;
-        case 'graphics':
-            formToRender = <GraphicsForm />;
-            break;
+    case 'software':
+      formToRender = <ServicesFormList />;
+      break;
+    case 'graphics':
+      formToRender = <GraphicsForm />;
+      break;
     default:
       formToRender = <div>Please select a valid service.</div>;
       break;
@@ -53,7 +53,7 @@ const [WebsiteData,setWebsiteData] = useState([])
 
         </div>
         {/* Right Column - Pricing Table (Spans 4 columns) */}
-        <PricingPlan WebsiteData={WebsiteData}/>
+        <PricingPlan WebsiteData={WebsiteData} />
       </div>
     </div>
   );

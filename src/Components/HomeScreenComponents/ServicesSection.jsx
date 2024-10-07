@@ -38,7 +38,14 @@ function ServicesSection() {
     digital: [
       { id: 1, name: 'SEO / SMO', imageUrl: 'https://cdn-icons-png.flaticon.com/512/1055/1055666.png' },
       { id: 2, name: 'Google Ads', imageUrl: 'https://cdn-icons-png.flaticon.com/512/4661/4661284.png' },
-      { id: 3, name: 'Content Marketing', imageUrl: 'https://cdn-icons-png.flaticon.com/512/2103/2103799.png' }
+      { id: 3, name: 'Content Marketing', imageUrl: 'https://cdn-icons-png.flaticon.com/512/2103/2103799.png' },
+      { id: 4, name: 'Social Media Marketing', imageUrl: 'https://cdn-icons-png.flaticon.com/512/1055/1055666.png' },
+      { id: 5, name: 'Pay-Per-Click Advertising (PPC)', imageUrl: 'https://cdn-icons-png.flaticon.com/512/4661/4661284.png' },
+      { id: 6, name: 'Email Marketing', imageUrl: 'https://cdn-icons-png.flaticon.com/512/2103/2103799.png' },
+      { id: 7, name: 'Web Analytics', imageUrl: 'https://cdn-icons-png.flaticon.com/512/1055/1055666.png' },
+      { id: 8, name: 'Conversion Rate Optimization (CRO)', imageUrl: 'https://cdn-icons-png.flaticon.com/512/4661/4661284.png' },
+      { id: 9, name: 'Video Marketing', imageUrl: 'https://cdn-icons-png.flaticon.com/512/4661/4661284.png' },
+      { id: 10, name: 'Mobile Marketing', imageUrl: 'https://cdn-icons-png.flaticon.com/512/2103/2103799.png' },
     ],
     software: [
       { id: 1, name: 'School Management Software', imageUrl: 'https://cdn-icons-png.flaticon.com/512/1055/1055666.png' },
